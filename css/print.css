@@ -1,0 +1,313 @@
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 5mm 8mm;
+    }
+
+    :root {
+        --border-radius: 2mm;
+        --base-margin: 1mm;
+        --base-gap: 3mm;
+        --base-padding:  3mm;
+        --boxes-padding: 3mm;
+
+        --gray-backcolor: #F0F0F0;
+        --white-backcolor: #FFFFFF;
+        --green-backcolor: #28D979;
+        --text-light-green: #EBF9F2;
+        --text-dark-green: #149063;
+    }
+
+    body {
+        width: 194mm !important;
+        height: 287mm !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-family: 'Poppins', sans-serif;
+        font-size: 3mm;
+        line-height: 1.4;
+        color: #333;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        background: white !important;
+    }
+
+    .resume {
+        display: grid;
+        grid-template:
+            'img welcome languages languages' 30mm
+            'experience experience experience tools' auto
+            'education education interests interests' auto /
+            30mm 1fr 1fr 1fr;
+        gap: var(--base-gap);
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+
+    p, li, span, td, th {
+        font-size: 2.5mm;
+        line-height: 1.4;
+        margin: 1mm 0;
+    }
+
+    h1 {
+        font-size: 4mm;
+        font-weight: 600;
+        margin: 2mm 0;
+    }
+
+    h2 {
+        font-size: 4mm;
+        font-weight: 500;
+        margin: 2mm 0;
+    }
+
+    h3 {
+        font-size: 3mm;
+        font-weight: 500;
+        margin: 1.5mm 0;
+    }
+
+    h4 {
+        font-size: 3mm;
+        font-weight: 400;
+        margin: 1mm 0;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .profile-image-container {
+        grid-area: img;
+        align-self: start;
+    }
+
+    .profile-image {
+        width: 30mm;
+        height: 30mm;
+        border-radius: 5mm;
+        object-fit: cover;
+        border: 0.5mm solid #eee;
+    }
+
+    .hello-part {
+        grid-area: welcome;
+        background-color: var(--gray-backcolor) !important;
+        border-radius: var(--border-radius);
+        padding: var(--base-padding);
+    }
+
+    .hello-part p {
+        font-size: 3.5mm;
+    }
+
+    .hello-part h2, h1 {
+        font-size: 4mm;
+    }
+
+    .languages {
+        grid-area: languages;
+        background-color: var(--gray-backcolor);
+        border-radius: var(--border-radius);
+        padding: var(--base-padding);
+    }
+
+    .languages h2 {
+        font-size: 4mm;
+    }
+
+    .language-name {
+        font-size: 3.5mm;
+    }
+
+    .language-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        gap: 0;
+    }
+
+    .language-progress {
+        height: 2.5mm;
+        border-radius: 1mm;
+    }
+
+    .language-progress::-webkit-progress-value {
+        background: var(--green-backcolor);
+    }
+
+    .experience {
+        grid-area: experience;
+        background: #F0F0F0;
+        border-radius: 3mm;
+        padding: 3mm;
+    }
+
+    .experience-item {
+        background: white;
+        border-radius: 3mm;
+        margin-bottom: 1mm;
+        padding: 2mm;
+        page-break-inside: avoid;
+    }
+
+    .experience h2, .experience h3 {
+        font-size: 4mm;
+    }
+
+    .experience p, .experience .date {
+        font-size: 3mm;
+    }
+
+    .experience-item:first-child {
+        background: var(--green-backcolor);
+        color: var(--text-light-green);
+    }
+
+    .experience-date {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 500;
+    }
+
+    .experience-body {
+        display: flex;
+        gap: 3mm;
+    }
+
+    .vacation {
+        flex: 1;
+    }
+
+    .experience-details {
+        margin-left: 6mm;
+        flex: 2;
+    }
+
+    .tools {
+        grid-area: tools;
+        background-color: var(--gray-backcolor);
+        border-radius: var(--border-radius);
+    }
+
+    .tools h3 {
+        font-size: 2mm;
+    }
+
+    .tools-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tools-icons {
+        margin-top: 3mm;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6mm;
+    }
+
+    .tools-icons img {
+        width: 6mm !important;
+        height: 6mm !important;
+        object-fit: contain;
+    }
+
+    .education {
+        grid-area: education;
+        background-color: var(--gray-backcolor);
+        border-radius: var(--border-radius);
+        padding: var(--base-padding);
+    }
+
+    .education-boxes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2mm;
+    }
+
+    .education-item {
+        background: white;
+        border-radius: var(--border-radius);
+        padding: var(--boxes-padding);
+        margin-bottom: 0;
+    }
+
+    .education-item img {
+        width: 5mm !important;
+        height: 5mm !important;
+    }
+
+    .education-name h3 {
+        margin-top: 0;
+        font-size: 3mm;
+    }
+
+    .education-item:first-child {
+        background: var(--green-backcolor);
+        color: var(--text-light-green);
+    }
+
+    .interests {
+        grid-area: interests;
+        background-color: var(--gray-backcolor);
+        border-radius: var(--border-radius);
+        padding: var(--base-padding);
+    }
+
+    .interests-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2mm;
+    }
+
+    .interest-tag {
+        background: white;
+        padding: 1mm 3mm;
+        border-radius: 10mm;
+        font-size: 3mm;
+    }
+
+    .contact {
+        background: black;
+        color: white;
+        border-radius: var(--border-radius);
+        padding: var(--base-padding);
+        margin-top: var(--base-gap);
+    }
+
+    .contact h2 {
+        font-size: 5.5mm;
+    }
+
+    .page-break {
+        page-break-before: always;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    a[href^="http"]::after {
+        content: none !important;
+    }
+
+
+    .tags {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+    }
+}

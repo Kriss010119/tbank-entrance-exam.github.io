@@ -1,0 +1,45 @@
+.edit-mode .interest-tag {
+    cursor: pointer;
+}
+
+.edit-mode .profile-image {
+    cursor: pointer;
+    filter: brightness(1.1);
+    box-shadow: 0 0 0 3px var(--green-backcolor);
+}
+
+[contenteditable="true"] {
+    outline: 2px dashed rgba(40, 217, 121, 0.3);
+    border-radius: 4px;
+    padding: 2px;
+    margin: -2px;
+    transition: all 0.2s ease;
+}
+
+[contenteditable="true"]:focus {
+    color:  #28D979FF;
+    outline: 2px solid var(--green-backcolor);
+    background-color: rgba(108, 255, 174, 0.1);
+}
+
+.education-item:first-of-type [contenteditable="true"]:focus, .experience-item:first-of-type  [contenteditable="true"]:focus {
+    color:  #28D979FF;
+    outline: 2px solid var(--green-backcolor);
+    background-color: #b4ffd7;
+}
+
+.edit-mode [contenteditable="true"] {
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    outline: 1px dashed rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 2px 4px;
+}
+
+.edit-mode .experience-details [contenteditable="true"],
+.edit-mode .education-name [contenteditable="true"] {
+    white-space: normal;
+    word-wrap: break-word;
+}

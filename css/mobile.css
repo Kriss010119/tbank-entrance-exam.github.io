@@ -1,0 +1,125 @@
+@media (min-width: 1320px) {
+    :root {
+        --text-base: 1.15rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    body {
+        padding: 40px;
+    }
+    .hello-part,
+    .languages,
+    .experience,
+    .tools,
+    .education,
+    .interests,
+    .contact {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .education-boxes {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    :root {
+        --text-base: 1rem;
+        --text-scale-ratio: 1.15;
+    }
+
+    body {
+        padding: 20px;
+    }
+
+    .profile-image-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .pdf-btn {
+        border-radius: var(--border-radius);
+        position: relative;
+        padding: 10px 30px;
+        width: 100%;
+    }
+
+    .education-boxes {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .resume {
+        grid-template:
+          'img' auto
+          'welcome' auto
+          'languages' auto
+          'experience' auto
+          'tools' auto
+          'education' auto
+          'interests' auto
+          'contact' auto /
+          1fr;
+    }
+
+    .interests-contact-info {
+        grid-template-rows: auto;
+        grid-template-areas:
+          'interests';
+    }
+
+    .tools-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .tools-category {
+        width: auto;
+        min-width: 120px;
+        padding-top: 1.2rem;
+        justify-content: stretch;
+    }
+
+    .tools-category h3 {
+        font-size: 0.8rem;
+        padding: 4px 12px;
+        margin-bottom: -1.5rem;
+    }
+
+    .tools-icons {
+        gap: 0.8rem;
+        padding: 1rem 0.5rem;
+        border-radius: 10px;
+    }
+
+    .tools-icons img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 600px) {
+    .education-boxes {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --text-base: 0.9375rem;
+    }
+
+    body {
+        padding: 20px;
+    }
+
+    h1 { font-size: var(--text-xl); }
+    h2 { font-size: var(--text-lg); }
+    h3 { font-size: var(--text-md); }
+}
